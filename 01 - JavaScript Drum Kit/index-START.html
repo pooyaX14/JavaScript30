@@ -64,6 +64,7 @@
     // const audio = document.querySeletor('audio[data-key=65]'); // we'll put audio[data-key=65] in to a variable 
     const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
     const key = document.querySelector(`.key[data-key="${e.keyCode}"]`); //so that we can use little animation using .key class
+    // console.log(key);
     if(!audio) return; // stop the function from running all together
     audio.currentTime = 0; //it will rewind it to the beginning; rewind it to the start
     audio.play();
@@ -76,8 +77,10 @@
   //   }, 0.07) // what if you have settimeout in css also? the start to adding up
     // keys.addEventListener('transitionend');used it since it's easy to iterate over an array using forEach loop
   function removeTransition(e){
-    if(e.propertyName !== 'transform') return; // skip it if it not a transform
-                                                // console.log(this); 
+    // console.log(e); 
+    // if(e.propertyName !== 'transform') return; // skip it if it not a transform
+                                                // console.log(this);        
+                                  
     this.classList.remove('playing');
   }
 
